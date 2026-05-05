@@ -1,0 +1,185 @@
+.patient-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.patient-card__header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
+}
+
+.patient-card__avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.patient-card__info {
+  min-width: 0;
+}
+
+.patient-card__name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 0 0 4px;
+  line-height: 1.15;
+}
+
+.patient-card__id {
+  font-size: 13px;
+  color: var(--text-soft);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.patient-card__summary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.patient-card__primary {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--line);
+}
+
+.patient-card__primary-value {
+  display: block;
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-h);
+  line-height: 1.3;
+}
+
+.patient-card__meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.patient-card__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
+  min-width: 0;
+}
+
+.patient-card__label {
+  font-size: 11px;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.patient-card__value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-h);
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.patient-card__vitals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.patient-card__vital {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(15, 118, 110, 0.08);
+  border: 1px solid rgba(15, 118, 110, 0.12);
+  min-width: 0;
+}
+
+.patient-card__vital--wide {
+  grid-column: 1 / -1;
+}
+
+.vital__icon {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.vital__icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.vital__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.vital__value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-h);
+  line-height: 1.2;
+}
+
+.vital__unit {
+  font-size: 11px;
+  color: var(--text-soft);
+}
+
+@media (prefers-color-scheme: dark) {
+  .patient-card__primary,
+  .patient-card__detail {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .patient-card__vital {
+    background: rgba(64, 211, 198, 0.12);
+    border-color: rgba(64, 211, 198, 0.14);
+  }
+}
+
+@media (max-width: 640px) {
+  .patient-card__header {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .patient-card__header .badge {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .patient-card__meta-grid,
+  .patient-card__vitals {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-card__vital--wide {
+    grid-column: auto;
+  }
+}

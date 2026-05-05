@@ -1,0 +1,40 @@
+.toggle {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+  box-shadow: var(--shadow-soft);
+}
+
+.toggle__btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.toggle__btn--active {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  color: white;
+  box-shadow: 0 10px 20px rgba(15, 118, 110, 0.2);
+}
+
+.toggle__icon {
+  display: inline-flex;
+}
+
+.toggle__icon svg {
+  width: 14px;
+  height: 14px;
+}

@@ -1,0 +1,131 @@
+.notifications {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.notifications__summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.notifications__summary-card {
+  padding: 18px;
+}
+
+.notifications__summary-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.notifications__summary-card strong {
+  font-size: 32px;
+  color: var(--text-h);
+}
+
+.notifications__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.notifications__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notifications__empty {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-soft);
+}
+
+.notifications__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+}
+
+.notifications__item--read {
+  opacity: 0.72;
+}
+
+.notifications__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.notifications__content {
+  flex: 1;
+}
+
+.notifications__title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.notifications__message {
+  font-size: 13px;
+  color: var(--text-soft);
+  margin-bottom: 4px;
+}
+
+.notifications__time {
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.notifications__actions-row {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.notifications__action {
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.notifications__action:hover {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.notifications__action--danger {
+  color: var(--danger);
+}
+
+.notifications__action--danger:hover {
+  background: rgba(220, 38, 38, 0.08);
+}
+
+@media (max-width: 768px) {
+  .notifications__summary {
+    grid-template-columns: 1fr;
+  }
+
+  .notifications__actions-row {
+    width: 100%;
+  }
+
+  .notifications__item {
+    flex-wrap: wrap;
+  }
+}

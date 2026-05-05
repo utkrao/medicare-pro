@@ -1,0 +1,120 @@
+.analytics {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.analytics__kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.analytics__kpi {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px;
+  min-height: 140px;
+}
+
+.analytics__kpi-value {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text-h);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.analytics__kpi-label {
+  font-size: 13px;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.analytics__overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 1fr);
+  gap: 20px;
+  align-items: start;
+  background:
+    radial-gradient(circle at top right, rgba(15, 118, 110, 0.14), transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(233, 244, 247, 0.96) 100%);
+}
+
+.analytics__overview-label {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.1);
+  color: #0f766e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.analytics__overview-title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.05;
+  color: #102033;
+}
+
+.analytics__overview-copy {
+  color: #4f6477;
+  line-height: 1.7;
+}
+
+.analytics__charts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.analytics__chart {
+  padding: 22px;
+}
+
+.analytics__chart--wide {
+  grid-column: 1 / -1;
+}
+
+.analytics__chart-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .analytics__overview {
+    background:
+      radial-gradient(circle at top right, rgba(15, 118, 110, 0.14), transparent 28%),
+      linear-gradient(135deg, rgba(228, 239, 244, 0.97) 0%, rgba(212, 228, 234, 0.97) 100%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .analytics__overview,
+  .analytics__kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .analytics__charts {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics__chart--wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .analytics__kpis,
+  .analytics__overview {
+    grid-template-columns: 1fr;
+  }
+}

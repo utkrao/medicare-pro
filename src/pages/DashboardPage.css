@@ -1,0 +1,245 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboard__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr);
+  gap: 24px;
+  align-items: end;
+  background:
+    radial-gradient(circle at top right, rgba(249, 115, 22, 0.18), transparent 30%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(233, 244, 247, 0.96) 100%);
+}
+
+.dashboard__eyebrow {
+  display: inline-flex;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.1);
+  color: #0f766e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.dashboard__hero-title {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1;
+  margin-bottom: 12px;
+  color: #102033;
+}
+
+.dashboard__hero-copy {
+  max-width: 720px;
+  color: #4f6477;
+  font-size: 1rem;
+}
+
+.dashboard__hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.dashboard__hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.dashboard__hero-metrics div {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(214, 230, 235, 0.62);
+  border: 1px solid rgba(117, 146, 156, 0.26);
+}
+
+.dashboard__hero-metrics span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #678094;
+}
+
+.dashboard__hero-metrics strong {
+  font-size: 28px;
+  color: #102033;
+}
+
+.dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.dashboard__section {
+  padding: 22px;
+  align-self: start;
+}
+
+.dashboard__section--wide {
+  grid-column: 1 / -1;
+}
+
+.dashboard__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.dashboard__section-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.dashboard__link {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.dashboard__link:hover {
+  text-decoration: underline;
+}
+
+.dashboard__patients {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+.dashboard__alerts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dashboard__alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: rgba(220, 38, 38, 0.08);
+  border-radius: 18px;
+  border: 1px solid rgba(220, 38, 38, 0.16);
+}
+
+.dashboard__alert-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--danger);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dashboard__alert-time {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.dashboard__empty {
+  color: var(--text-soft);
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;
+}
+
+.dashboard__departments {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dashboard__dept {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dashboard__dept-name {
+  width: 140px;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.dashboard__dept-bar {
+  flex: 1;
+  height: 10px;
+  background: var(--code-bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dashboard__dept-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-strong) 100%);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.dashboard__dept-count {
+  width: 80px;
+  text-align: right;
+  font-size: 12px;
+  color: var(--text-soft);
+  flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dashboard__hero {
+    background:
+      radial-gradient(circle at top right, rgba(249, 115, 22, 0.18), transparent 32%),
+      linear-gradient(135deg, rgba(228, 239, 244, 0.97) 0%, rgba(212, 228, 234, 0.97) 100%);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard__patients {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard__hero-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard__stats {
+    grid-template-columns: 1fr;
+  }
+}

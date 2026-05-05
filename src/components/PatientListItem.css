@@ -1,0 +1,89 @@
+.patient-list-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.patient-list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.patient-list-item__avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+
+.patient-list-item__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.patient-list-item__name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0 0 4px;
+}
+
+.patient-list-item__meta {
+  font-size: 13px;
+  color: var(--text-soft);
+  margin: 0;
+}
+
+.patient-list-item__cell {
+  flex: 0 0 120px;
+  font-size: 13px;
+  color: var(--text-soft);
+  text-align: center;
+}
+
+.patient-list-item__vitals {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text-h);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.patient-list-item__vitals span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.patient-list-item__vitals svg {
+  width: 14px;
+  height: 14px;
+  color: var(--accent);
+}
+
+@media (max-width: 1024px) {
+  .patient-list-item__cell {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .patient-list-item {
+    flex-wrap: wrap;
+  }
+
+  .patient-list-item__vitals {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

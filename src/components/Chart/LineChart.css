@@ -1,0 +1,31 @@
+.line-chart {
+  position: relative;
+  padding: 14px 0 8px;
+}
+
+.line-chart__svg {
+  width: 100%;
+  height: calc(100% - 28px);
+  overflow: visible;
+}
+
+.line-chart__dot {
+  transition: r 0.2s, filter 0.2s;
+}
+
+.line-chart__dot:hover {
+  r: 5;
+  filter: drop-shadow(0 0 8px rgba(15, 118, 110, 0.32));
+}
+
+.line-chart__labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.line-chart__label {
+  font-size: 12px;
+  color: var(--text-soft);
+  font-weight: 700;
+}
