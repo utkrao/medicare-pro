@@ -6,12 +6,14 @@ import {
   googleProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
   signOut as firebaseSignOut,
   onAuthStateChanged,
 } from '@/firebase/config';
 
 interface AuthStore extends AuthState {
   loginWithEmail: (credentials: LoginCredentials) => Promise<void>;
+  signupWithEmail: (credentials: LoginCredentials) => Promise<void>;
   loginWithGoogle: () => Promise<void>;
   logout: () => Promise<void>;
   setUser: (user: UserData | null) => void;
@@ -35,7 +37,7 @@ export const useAuthStore = create<AuthStore>()(
       isAuthenticated: false,
       error: null,
 
-      loginWithEmail: async (credentials) => {
+loginWithEmail: async (credentials) => {
         set({ isLoading: true, error: null });
         try {
           const result = await signInWithEmailAndPassword(
@@ -48,6 +50,24 @@ export const useAuthStore = create<AuthStore>()(
         } catch (error) {
           const message =
             error instanceof Error ? error.message : 'Login failed';
+          set({ error: message, isLoading: false });
+          throw error;
+        }
+      },
+
+      signupWithEmail: async (credentials) => {
+        set({ isLoading: true, error: null });
+        try {
+          const result = await createUserWithEmailAndPassword(
+            auth,
+            credentials.email,
+            credentials.password
+          );
+          const userData = mapFirebaseUser(result.user);
+          set({ user: userData, isAuthenticated: true, isLoading: false });
+        } catch (error) {
+          const message = 
+            error instanceof Error ? error.message : 'Signup failed';
           set({ error: message, isLoading: false });
           throw error;
         }

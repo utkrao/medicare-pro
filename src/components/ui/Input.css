@@ -17,8 +17,9 @@
   padding: 14px 16px;
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.82);
+  background: var(--bg-strong);
   color: var(--text-h);
+
   font-family: inherit;
   font-size: 15px;
   transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
@@ -27,7 +28,8 @@
 .input:focus {
   outline: none;
   border-color: var(--accent);
-  background: white;
+  background: var(--bg-strong);
+
   box-shadow: 0 0 0 4px var(--accent-bg);
 }
 

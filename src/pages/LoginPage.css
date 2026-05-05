@@ -21,9 +21,10 @@
 .login-page__story {
   padding: 42px;
   border-radius: 32px;
-  color: rgba(241, 248, 253, 0.92);
+  color: var(--text);
   background:
-    linear-gradient(135deg, rgba(8, 27, 43, 0.82) 0%, rgba(11, 32, 50, 0.9) 100%),
+    linear-gradient(135deg, var(--bg-elevated) 0%, var(--panel) 100%),
+
     radial-gradient(circle at top right, rgba(49, 200, 186, 0.16), transparent 30%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.24);
@@ -35,7 +36,7 @@
   padding: 8px 12px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
-  color: #99f6e4;
+  color: var(--accent);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -45,15 +46,17 @@
 .login-page__headline {
   font-size: clamp(2.25rem, 4vw, 4rem);
   line-height: 0.95;
-  color: white;
+  color: var(--text-h);
   margin-bottom: 16px;
+
 }
 
 .login-page__lead {
   font-size: 1rem;
   line-height: 1.7;
   max-width: 560px;
-  color: rgba(226, 238, 247, 0.76);
+  color: var(--text-soft);
+
 }
 
 .login-page__metrics {
@@ -73,13 +76,15 @@
 .login-page__metrics strong {
   display: block;
   font-size: 26px;
-  color: white;
+  color: var(--text-h);
   margin-bottom: 6px;
+
 }
 
 .login-page__metrics span {
-  color: rgba(226, 238, 247, 0.68);
+  color: var(--text);
   font-size: 13px;
+
 }
 
 .login-page__points {
@@ -87,17 +92,19 @@
   padding-left: 18px;
   display: grid;
   gap: 12px;
-  color: rgba(230, 241, 250, 0.82);
+  color: var(--text);
+
 }
 
 .login-page__card {
   width: 100%;
   padding: 38px;
-  background: rgba(255, 255, 255, 0.88);
+  background: var(--bg-strong);
   border-radius: 32px;
   box-shadow: var(--shadow);
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--border);
   backdrop-filter: blur(18px);
+
 }
 
 .login-page__header {
@@ -113,10 +120,13 @@
   margin-bottom: 18px;
   border-radius: 18px;
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
-  color: white;
+  color: #ffffff;
   font-family: var(--heading);
   font-size: 18px;
   font-weight: 700;
+
+
+
 }
 
 .login-page__title {
@@ -128,6 +138,10 @@
 .login-page__subtitle {
   color: var(--text-soft);
   font-size: 14px;
+}
+
+.auth-tabs {
+  margin: 24px 0 8px 0;
 }
 
 .login-page__form {

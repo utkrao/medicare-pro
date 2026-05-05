@@ -1,6 +1,6 @@
 .toggle {
   display: inline-flex;
-  background: rgba(255, 255, 255, 0.78);
+  background: var(--bg-strong);
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 4px;
@@ -16,7 +16,7 @@
   border: none;
   border-radius: 999px;
   background: transparent;
-  color: var(--text);
+  color: var(--text-soft);
   font-family: inherit;
   font-size: 13px;
   font-weight: 700;
@@ -26,8 +26,9 @@
 
 .toggle__btn--active {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
-  color: white;
+  color: #2b2b2b;
   box-shadow: 0 10px 20px rgba(15, 118, 110, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .toggle__icon {

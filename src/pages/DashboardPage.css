@@ -9,9 +9,7 @@
   grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr);
   gap: 24px;
   align-items: end;
-  background:
-    radial-gradient(circle at top right, rgba(249, 115, 22, 0.18), transparent 30%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(233, 244, 247, 0.96) 100%);
+  background-color: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(233, 244, 247, 0.96) 100%);
 }
 
 .dashboard__eyebrow {

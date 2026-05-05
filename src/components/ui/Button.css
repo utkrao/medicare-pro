@@ -18,8 +18,10 @@
 
 .btn--primary {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
-  color: white;
-  box-shadow: 0 14px 30px rgba(15, 118, 110, 0.22);
+
+
+
+
 }
 
 .btn--primary:hover:not(:disabled) {
@@ -28,14 +30,16 @@
 }
 
 .btn--secondary {
-  background: rgba(255, 255, 255, 0.78);
-  color: var(--accent);
+  background: var(--bg-strong);
+  color: var(--text-h);
   border: 1px solid var(--accent-border);
+
 }
 
 .btn--secondary:hover:not(:disabled) {
   transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.96);
+  background: var(--bg-strong);
+
 }
 
 .btn--danger {
@@ -55,8 +59,9 @@
 }
 
 .btn--ghost:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.54);
+  background: var(--bg-elevated);
   border-color: var(--border);
+
 }
 
 .btn:disabled {
