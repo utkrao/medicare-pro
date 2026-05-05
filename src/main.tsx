@@ -4,7 +4,6 @@ import './index.css'
 import App from './App.tsx'
 import { initializeAuthListener } from './store/authStore.ts'
 
-// Initialize Firebase auth listener once before rendering
 initializeAuthListener()
 
 createRoot(document.getElementById('root')!).render(
