@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Optional: keep SPA routes working if you later use client-side routing
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
